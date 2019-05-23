@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties resource="com/mybatis/properties/db.properties" />
+	
+	<typeAliases>
+		<typeAlias type="java.lang.String" alias="str"/>
+		<typeAlias type="java.lang.Integer" alias="int"/>
+		<typeAlias type="com.java.dto.MemberVO" alias="member"/>
+		<typeAlias type="com.java.dto.BoardVO" alias="board"/>	
+		<typeAlias type="com.java.dto.ReplyVO" alias="reply"/>
+		<typeAlias type="com.java.dto.PdsVO" alias="pds" />	
+		<typeAlias type="com.java.dto.AttachVO" alias="attach" />
+	</typeAliases>
+	
+	<environments default="dev">
+		<environment id="dev">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driverClassName}"/>
+		        <property name="url" value="${url}"/>
+		        <property name="username" value="${username}"/>
+		        <property name="password" value="${password}"/>
+			</dataSource>		
+		</environment>
+	</environments>	
+	
+	<mappers>
+		<mapper resource="com/mybatis/resource/Member-Mapper.xml"/>
+		<mapper resource="com/mybatis/resource/Board-Mapper.xml"/>
+		<mapper resource="com/mybatis/resource/Reply-Mapper.xml"/>
+		<mapper resource="com/mybatis/resource/Pds-Mapper.xml"/>
+		<mapper resource="com/mybatis/resource/Attach-Mapper.xml"/>
+	</mappers>
+	
+</configuration>
+
+
+
+
+
+
+

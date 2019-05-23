@@ -1,0 +1,35 @@
+package com.java.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.java.dto.MemberVO;
+import com.java.request.Criteria;
+
+public interface MemberDAO {
+		
+	//MemberVO 리스트
+	List<MemberVO> selectMemberList()throws SQLException;
+	// 검색 및 리스트를 잘라서 보여준다. Rowbowns로 짜른다
+	List<MemberVO> selectMemberList(Criteria cri)throws SQLException;
+	// 검색된 결과의 전체 리스트 개수 Rowbowns로 안자른다
+	int selectMemberListCount(Criteria cri) throws SQLException;
+	
+	//id 조회 MemberVO
+	MemberVO selectMemberById(String id)throws SQLException;
+	
+	//insert MemberVO
+	void insertMember(MemberVO member)throws SQLException;
+	
+	//update MemberVO
+	void updateMember(MemberVO member)throws SQLException;
+	
+	//id를 받아서 delete MemberVO  
+	void deleteMember(String id)throws SQLException;
+
+	//id를 받아서 disable MemberVO  
+	void disableMember(String id)throws SQLException;
+}
+
+
+
