@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+<!-- 		
+	<import resource="classpath:com/spring/context/dataSource-context.xml"/>
+	<import resource="classpath:com/spring/context/application-context.xml"/>
+ -->
+ 	<import resource="classpath:context/application-context.xml"/>
+ 	<import resource="classpath:context/dataSource-context.xml"/>
+ <!-- 
+ 	servlet도 같이 실행이 되기 때문에 위험할수 있다
+ 	그래서 servlet만 다른 패키지로 나누어 준다. 
+ -->
+ 	</beans>
